@@ -1,0 +1,41 @@
+{
+  "name": "@web-see/core",
+  "version": "0.1.0",
+  "description": "@web-see/core",
+  "main": "index.js",
+  "module": "dist/core.esm-bundler.js",
+  "types": "dist/core.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/core.d.ts",
+      "node": {
+        "production": "./dist/core.cjs.prod.js",
+        "development": "./dist/core.cjs.js",
+        "default": "./index.js"
+      },
+      "module": "./dist/core.esm-bundler.js",
+      "import": "./dist/core.esm-bundler.js",
+      "require": "./index.js"
+    },
+    "./*": "./*"
+  },
+  "buildOptions": {
+    "name": "core",
+    "formats": [
+      "esm-bundler",
+      "cjs"
+    ]
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@web-see/shared": "workspace:*"
+  }
+}

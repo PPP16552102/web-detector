@@ -1,0 +1,50 @@
+{
+  "name": "wee-see",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "build-dts": "tsc -p tsconfig.build.json --noCheck && rollup -c rollup.dts.config.js",
+    "check": "tsc --incremental --noEmit",
+    "lint": "eslint --cache .",
+    "format": "prettier --write --cache",
+    "format-check": "prettier --check --cache .",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm check"
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "rollup": "catalog:",
+    "typescript": "catalog:",
+    "esbuild": "catalog:",
+    "prettier": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "lint-staged": "catalog:",
+    "eslint": "catalog:",
+    "typescript-eslint": "catalog:",
+    "picocolors": "catalog:",
+    "rollup-plugin-esbuild": "catalog:",
+    "rollup-plugin-dts": "catalog:"
+  }
+}
