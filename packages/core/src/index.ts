@@ -1,9 +1,6 @@
 import { _global } from '@web-see/shared'
-import {
-  initPerformanceCapture,
-  initPvCapture,
-  initBehaviorCapture,
-} from '@web-see/integration'
+import { initPerformanceCapture } from '@web-see/integration'
+import { Transport } from '@web-see/transport'
 
 export interface IInitOptions {
   dsn: string // 上报地址
@@ -18,11 +15,14 @@ export function init(options: IInitOptions) {
 
   if (!('fetch' in _global) || options.disabled) return
 
-  console.log(initBehaviorCapture)
+  const transport = new Transport({
+    serverUrl: 'http://localhost:8081',
+    batchSize: 5,
+    flushInterval: 5000,
+    useBeacon: true,
+  })
 
-  initPerformanceCapture()
-  initPvCapture()
-  initBehaviorCapture()
+  initPerformanceCapture(transport.push.bind(transport))
 }
 
 export function test() {

@@ -37,6 +37,7 @@
   "packageManager": "pnpm@10.14.0",
   "devDependencies": {
     "@web-see/shared": "workspace:*",
-    "@web-see/integration": "workspace:*"
+    "@web-see/integration": "workspace:*",
+    "@web-see/transport": "workspace:*"
   }
 }

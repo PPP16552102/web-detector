@@ -107,10 +107,15 @@ importers:
       '@web-see/shared':
         specifier: workspace:*
         version: link:../shared
+      '@web-see/transport':
+        specifier: workspace:*
+        version: link:../transport
 
   packages/integration: {}
 
   packages/shared: {}
+
+  packages/transport: {}
 
   packages/web-see:
     dependencies:

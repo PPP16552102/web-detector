@@ -1,4 +1,4 @@
-export function initPerformanceCapture() {
+export function initPerformanceCapture(report: (event: any) => void) {
   const done = () => {
     console.log('done')
 
@@ -59,7 +59,7 @@ export function initPerformanceCapture() {
       timestamp: Date.now(),
     }
 
-    console.log('data -> ', data)
+    report(data)
   }
 
   if (document.readyState === 'complete') {
