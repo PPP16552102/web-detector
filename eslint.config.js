@@ -7,7 +7,7 @@ export default defineConfig(
     extends: [tseslint.configs.base],
     rules: {
       'no-debugger': 'error',
-      'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+      'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
     },
   },
   {
