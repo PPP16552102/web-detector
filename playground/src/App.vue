@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { test } from 'web-see'
+import { test, init } from 'web-see'
 
+init({
+  dsn: '123',
+  apikey: '123',
+})
 test()
 </script>
 

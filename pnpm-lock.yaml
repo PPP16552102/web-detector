@@ -101,9 +101,14 @@ importers:
 
   packages/core:
     devDependencies:
+      '@web-see/integration':
+        specifier: workspace:*
+        version: link:../integration
       '@web-see/shared':
         specifier: workspace:*
         version: link:../shared
+
+  packages/integration: {}
 
   packages/shared: {}
 

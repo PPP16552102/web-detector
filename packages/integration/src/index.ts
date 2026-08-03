@@ -1,3 +1,5 @@
 export * from './xhr'
 export * from './fetch'
 export * from './error'
+export * from './resource'
+export * from './performance'

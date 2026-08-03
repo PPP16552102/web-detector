@@ -1,4 +1,5 @@
 import { _global } from '@web-see/shared'
+import { initPerformanceCapture } from '@web-see/integration'
 
 export interface IInitOptions {
   dsn: string // 上报地址
@@ -12,6 +13,10 @@ export function init(options: IInitOptions) {
   }
 
   if (!('fetch' in _global) || options.disabled) return
+
+  console.log(initPerformanceCapture)
+
+  initPerformanceCapture()
 }
 
 export function test() {

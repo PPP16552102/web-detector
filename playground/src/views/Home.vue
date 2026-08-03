@@ -15,6 +15,9 @@ const handleJSCodeError = () => {
   <div>
     <el-row>
       <el-button type="primary" @click="handleJSCodeError">js错误</el-button>
+      <el-button type="primary" @click="handleJSCodeError">js错误</el-button>
+      <el-button type="primary" @click="handleJSCodeError">js错误</el-button>
+      <el-button type="primary" @click="handleJSCodeError">js错误</el-button>
     </el-row>
     <p class="error">报错统计</p>
     <el-table :data="tableData" style="width: 100%">
